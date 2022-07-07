@@ -26,9 +26,9 @@ final class Yii2TacticianCommandBus extends Component
             new MapByNamingConvention(new Suffix('Handler'), new Handle())
         );
 
-        $lockingMiddleware = new LockingMiddleware();
-
-        $this->commandBus = new CommandBus([$lockingMiddleware, $handlerMiddleware]);
+        //$lockingMiddleware = new LockingMiddleware();
+        //$this->commandBus = new CommandBus([$lockingMiddleware, $handlerMiddleware]);
+        $this->commandBus = new CommandBus([$handlerMiddleware]);
     }
 
     /**
